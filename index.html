@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-ks-all.js"></script>
+    
+
+
+</head>
+<body>
+    <div id=container></div>
+    <script>
+        Highcharts.mapChart('container', {
+        
+            chart: {
+                map: 'countries/us/us-ks-all'
+            },
+        
+            title: {
+                text: 'Highmaps basic lat/lon demo'
+            },
+        
+            mapNavigation: {
+                enabled: true
+            },
+        
+            tooltip: {
+                headerFormat: '',
+                pointFormat: '<b>{point.name}</b><br>Lat: {point.lat}, Lon: {point.lon} <br> Cases:{point.cases}'
+            },
+        
+            series: [{
+                // Use the us-ks-all map with no data as a basemap
+                name: 'Basemap',
+                borderColor: '#A0A0A0',
+                nullColor: 'rgba(200, 200, 200, 0.3)',
+                showInLegend: false
+            }, {
+                name: 'Separators',
+                type: 'mapline',
+                nullColor: '#707070',
+                showInLegend: false,
+                enableMouseTracking: false
+            }, {
+                // Specify points using lat/lon
+                type: 'mappoint',
+                name: 'Cities',
+                color: Highcharts.getOptions().colors[1],
+                data: [{
+                    name: 'Kansas State University',
+                    lat: 39.197427050417424,
+                    lon: -96.58473563057946,
+                    cases: 1183,
+                }, {
+                    name: 'Wichita State University',
+                    lat: 37.7186,
+                    lon: -97.2941,
+                    cases: 149,
+                }, {
+                    name: 'University of Kansas',
+                    lat: 38.9543,
+                    lon: -95.2558,
+                    cases: 1249,
+                }, {
+                    name: 'Allen County Community College',
+                    lat: 37.9384,
+                    lon: -95.3997,
+                    cases: 61,
+                }, {
+                    name: 'Baker University',
+                    lat: 38.7775,
+                    lon: -95.1888,
+                    cases: 94,
+                }, {
+                    name: 'Benedictine College',
+                    lat: 39.5748,
+                    lon: -95.1124,
+                    cases: 130,
+                }, {
+                    name: 'Bethel College',
+                    lat: 38.0737,
+                    lon: -97.3433,
+                    cases: 140,
+                },{
+                    name: 'Butler Community College',
+                    lat: 37.8073,
+                    lon: -96.8830,
+                    cases: 212,
+                },{
+                    name: 'Central Christian College',
+                    lat: 38.2131,
+                    lon: -97.404,
+                    cases: 20,
+                },{
+                    name: 'Dodge City Community College',
+                    lat: 37.7748,
+                    lon: -100.0354,
+                    cases: 13, 
+                },
+                {
+                    name: 'Emporia State University',
+                    lat: 38.4164,
+                    lon: -96.1793,
+                    cases: 188,
+                },{
+                    name: 'Flint Hills Technical College',
+                    lat: 38.4191,
+                    lon: -96.2240,
+                    cases: 4,
+                },{
+                    name: 'Fort Hays State University',
+                    lat: 38.8714,
+                    lon: -99.3445,
+                    cases: 307,
+                }, {
+                    name: 'Hesston College',
+                    lat: 38.1347,
+                    lon: -97.4337,
+                    cases: 7,
+                },{
+                    name: 'Haskell Indian Nations University',
+                    lat: 38.9388,
+                    lon: -95.2329,
+                    cases: 0,
+                },{
+                    name: 'Pittsburg State University',
+                    lat: 37.3903,
+                    lon: -97.3777,
+                    cases: 286,
+                },{
+                    name: 'University of Saint Mary',
+                    lat: 39.2783,
+                    lon: -94.9063,
+                    cases: 34,
+                },{
+                    name: 'Washburn University',
+                    lat: 39.0335,
+                    lon: -95.7020,
+                    cases: 215,
+                },{
+                    name: 'Sterling College',
+                    lat: 38.2203,
+                    lon: -98.2072,
+                    cases: 22,
+                },{
+                    name: 'Southwestern College',
+                    lat: 37.2495,
+                    lon: -96.9760,
+                    cases: 86,
+                },{
+                    name: 'Newman University',
+                    lat: 37.6735,
+                    lon: -94.6916,
+                    cases: 84,
+                },{
+                    name: 'Labette Community College',
+                    lat: 37.3391,
+                    lon: -95.2553,
+                    cases: 5,
+                },{
+                    name: 'Kansas Wesleyan University',
+                    lat: 38.8136,
+                    lon: -97.6091,
+                    cases: 28,
+                },{
+                    name: 'Johnson County Community College',
+                    lat: 38.9238,
+                    lon: -94.7306,
+                    cases: 136, 
+                },{
+                    name: 'Hutchinson Community College',
+                    lat: 38.0667,
+                    lon: -97.919,
+                    cases: 51,
+                },{
+                    name: 'Hesston College',
+                    lat: 38.1347,
+                    lon: -97.4337,
+                    cases: 7,
+                },{
+                    name: 'Central Christian College',
+                    lat: 38.2131,
+                    lon: -97.404,
+                    cases: 20,
+                    dataLabels: {
+                        align: 'left',
+                        x: 5,
+                        verticalAlign: 'middle'
+                    }
+                }]
+            }]
+        });
+        </script>
+</body>
+</html>
